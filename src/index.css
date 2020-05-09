@@ -144,6 +144,11 @@ dl dt {
 
 .cards-list .cards-paginator {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 10px 0;
+}
+
+.cards-list .cards-paginator .btn {
+  margin: 5px;
+  width: 100px;
 }

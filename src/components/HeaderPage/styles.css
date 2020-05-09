@@ -1,0 +1,11 @@
+.header-page {
+  box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+  margin-bottom: 20px;
+  padding: 15px;
+  text-align: center;
+}
+
+.header-page h1 {
+  color: #227;
+  margin: 0;
+}

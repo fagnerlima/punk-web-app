@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import http from '../../../services/http';
+import HeaderPage from '../../../components/HeaderPage';
 
 class BeerDetail extends Component {
 
@@ -33,9 +34,7 @@ class BeerDetail extends Component {
 
     return (
       <>
-        <header className="text-center">
-          <h1>Beer Details</h1>
-        </header>
+        <HeaderPage>Beer Details</HeaderPage>
         <dl>
           <dt>Name</dt>
           <dd>{beer.name}</dd>

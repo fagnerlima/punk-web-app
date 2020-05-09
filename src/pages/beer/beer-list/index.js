@@ -12,6 +12,7 @@ import {
   CardsPage,
   CardsPaginator
 } from '../../../components/card';
+import HeaderPage from '../../../components/HeaderPage';
 
 class BeerList extends Component {
 
@@ -62,9 +63,7 @@ class BeerList extends Component {
 
     return (
       <>
-        <header className="text-center">
-          <h1>Beers</h1>
-        </header>
+        <HeaderPage>Beers</HeaderPage>
         <CardsList>
           <CardsPage>
             {beers.map(beer => (

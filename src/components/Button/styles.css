@@ -3,7 +3,7 @@
   border: none;
   cursor: pointer;
   display: inline-block;
-  padding: 10px 15px;
+  padding: 9px 15px;
   transition: .3s;
 }
 
@@ -22,10 +22,20 @@ a.btn {
 
 .btn-sm {
   font-size: .8em;
-  padding: 5px 10px;
+  padding: 4px 10px;
 }
 
 .btn[disabled] {
   background-color: rgba(120, 120, 120, .8);
   cursor: default;
+}
+
+.btn-content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-content > * {
+  margin: .25em;
 }

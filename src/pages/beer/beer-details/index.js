@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+
 import './styles.css';
 import http from '../../../services/http';
 import HeaderPage from '../../../components/HeaderPage';
@@ -46,7 +48,7 @@ class BeerDetails extends Component {
         <HeaderPage>Beer Details</HeaderPage>
         {!isLoaded ? <Load /> : this.beerDetails()}
         <FooterPage>
-          <Button type="link" color="primary"to="/beers">
+          <Button type="link" color="primary"to="/beers" icon={faArrowLeft}>
             Return
           </Button>
         </FooterPage>

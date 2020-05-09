@@ -13,13 +13,16 @@ import {
   CardsPaginator
 } from '../../../components/Card';
 import HeaderPage from '../../../components/HeaderPage';
+import Load from '../../../components/Load';
+import Alert from '../../../components/Alert';
 
 class BeerList extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      beers: [],
+      beers: null,
+      isLoaded: false,
       pageIndex: 1,
       pageSize: 12
     };
@@ -31,14 +34,23 @@ class BeerList extends Component {
 
   loadProducts = async (pageIndex = 1) => {
     try {
+      this.setState({
+        isLoaded: false
+      });
+
       const { pageSize } = this.state;
       const response = await http.get(`/beers?per_page=${pageSize}&page=${pageIndex}`);
+
       this.setState({
         beers: response.data,
         pageIndex
       });
     } catch (error) {
       console.error('loadProducts error', error);
+    } finally {
+      this.setState({
+        isLoaded: true
+      });
     }
   }
 
@@ -59,38 +71,50 @@ class BeerList extends Component {
   }
 
   render() {
-    const { beers, pageIndex } = this.state;
+    const { isLoaded } = this.state;
 
     return (
       <>
         <HeaderPage>Beers</HeaderPage>
-        <CardsList>
-          <CardsPage>
-            {beers.map(beer => (
-              <Card key={beer.id}>
-                <CardImage url={beer.image_url} alt={beer.name} title={beer.name} />
-                <CardHeader>{beer.name}</CardHeader>
-                <CardContent>{beer.tagline}</CardContent>
-                <CardFooter>
-                  <Button
-                    type="link"
-                    color="primary"
-                    size="sm"
-                    to={`/beers/${beer.id}`}
-                  >
-                    View Details
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </CardsPage>
-          <CardsPaginator
-            onPrevious={this.previousPage}
-            onNext={this.nextPage}
-            previousDisabled={pageIndex === 1}
-          ></CardsPaginator>
-        </CardsList>
+        {!isLoaded ? <Load /> : this.cardsList()}
       </>
+    );
+  }
+
+  cardsList = () => {
+    const { beers, pageIndex } = this.state;
+
+    if (!beers || !beers.length) {
+      return <Alert type="danger">Information not found</Alert>;
+    }
+
+    return (
+      <CardsList>
+        <CardsPage>
+          {beers.map(beer => (
+            <Card key={beer.id}>
+              <CardImage url={beer.image_url} alt={beer.name} title={beer.name} />
+              <CardHeader>{beer.name}</CardHeader>
+              <CardContent>{beer.tagline}</CardContent>
+              <CardFooter>
+                <Button
+                  type="link"
+                  color="primary"
+                  size="sm"
+                  to={`/beers/${beer.id}`}
+                >
+                  View Details
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </CardsPage>
+        <CardsPaginator
+          onPrevious={this.previousPage}
+          onNext={this.nextPage}
+          previousDisabled={pageIndex === 1}
+        ></CardsPaginator>
+      </CardsList>
     );
   }
 }

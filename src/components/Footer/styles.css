@@ -1,8 +1,13 @@
 #main-footer {
+  align-items: center;
   background-color: #333;
   bottom: 0;
   color: #fff;
-  font-size: .9em;
+  display: flex;
+  flex-direction: column;
+  font-size: .8em;
+  height: 140px;
+  justify-content: center;
   padding: 40px 20px;
   position: absolute;
   text-align: center;
@@ -10,7 +15,7 @@
 }
 
 #main-footer p {
-  margin: 0 0 10px;
+  margin: 0 0 5px;
 }
 
 #main-footer p:last-of-type {

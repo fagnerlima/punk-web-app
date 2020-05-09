@@ -13,17 +13,3 @@ body {
 
 /* Text */
 .text-center { text-align: center }
-
-/* Container */
-
-.container {
-  background-color: #fff;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-@media (min-width: 840px) {
-  .container {
-    max-width: 800px;
-  }
-}

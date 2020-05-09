@@ -90,51 +90,6 @@ class BeerList extends Component {
             previousDisabled={pageIndex === 1}
           ></CardsPaginator>
         </CardsList>
-        {/* <div className="cards-list">
-          <div className="cards-page">
-            {beers.map(beer => (
-              <div key={beer.id} className="card">
-                <div className="card-image">
-                  <img src={beer.image_url} alt={beer.name} title={beer.name} />
-                </div>
-                <div className="card-title">
-                  <header class>
-                    <h3>{beer.name}</h3>
-                  </header>
-                </div>
-                <div className="card-content">
-                  <p>{beer.tagline}</p>
-                </div>
-                <div className="card-footer">
-                  <Button
-                    type="link"
-                    color="primary"
-                    size="sm"
-                    to={`/beers/${beer.id}`}
-                  >
-                    View Details
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="cards-paginator">
-            <Button
-              color="primary"
-              classes="btn-previous"
-              onClick={this.previousPage}
-              disabled={pageIndex === 1}
-            >
-              Previous
-            </Button>
-            <Button
-                color="primary"
-                classes="btn-next"
-                onClick={this.nextPage}>
-              Next
-            </Button>
-          </div>
-        </div> */}
       </>
     );
   }

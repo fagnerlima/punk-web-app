@@ -1,0 +1,12 @@
+.load {
+  align-items: center;
+  background-color: rgba(0, 0, 0, .3);
+  display: flex;
+  font-size: 3em;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

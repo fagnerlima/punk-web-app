@@ -47,7 +47,7 @@ class BeerDetails extends Component {
         {!isLoaded ? <Load /> : this.beerDetails()}
         <FooterPage>
           <Button type="link" color="primary"to="/beers">
-            Voltar
+            Return
           </Button>
         </FooterPage>
       </>

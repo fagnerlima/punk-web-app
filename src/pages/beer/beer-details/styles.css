@@ -12,6 +12,10 @@
   height: 300px;
 }
 
+.beer-details .beer-info {
+  text-align: justify;
+}
+
 .beer-details .beer-info .beer-name {
   font-size: 1.4em;
   margin-bottom: 10px;

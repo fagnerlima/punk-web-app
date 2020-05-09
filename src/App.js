@@ -1,7 +1,9 @@
 import React from 'react';
 
-import Header from './components/Header';
+import './App.css';
 import Routes from './routes';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const App = () => (
   <div className="App">
@@ -9,6 +11,7 @@ const App = () => (
     <div className="container">
       <Routes />
     </div>
+    <Footer />
   </div>
 );
 

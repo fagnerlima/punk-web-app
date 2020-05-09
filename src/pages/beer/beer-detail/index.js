@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import http from '../../../services/http';
 import HeaderPage from '../../../components/HeaderPage';
+import FooterPage from '../../../components/FooterPage';
 import Button from '../../../components/Button';
 
 class BeerDetail extends Component {
@@ -35,13 +36,18 @@ class BeerDetail extends Component {
     return (
       <>
         <HeaderPage>Beer Details</HeaderPage>
-        <Button
-          type="link"
-          color="primary"
-          to="/beers"
-        >
-          Voltar
-        </Button>
+        <div>
+          <h4>{beer.name}</h4>
+        </div>
+        <FooterPage>
+          <Button
+            type="link"
+            color="primary"
+            to="/beers"
+          >
+            Voltar
+          </Button>
+        </FooterPage>
       </>
     );
   }

@@ -2,8 +2,8 @@ import React from 'react';
 
 import './styles.css';
 
-const HeaderPage = ({ children, ...props }) => (
-  <header className="header-page" {...props}>
+const HeaderPage = ({ children }) => (
+  <header className="header-page">
     <h1>{children}</h1>
   </header>
 );

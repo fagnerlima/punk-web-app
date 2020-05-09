@@ -11,7 +11,7 @@ import {
   CardsList,
   CardsPage,
   CardsPaginator
-} from '../../../components/card';
+} from '../../../components/Card';
 import HeaderPage from '../../../components/HeaderPage';
 
 class BeerList extends Component {

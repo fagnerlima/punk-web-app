@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { faBackward, faForward } from '@fortawesome/free-solid-svg-icons'
+
 import './styles.css';
 import Button from '../Button';
 
@@ -10,6 +12,7 @@ const CardsPaginator = ({ onPrevious, onNext, previousDisabled, nextDisabled, ..
       classes="btn-previous"
       onClick={onPrevious}
       disabled={previousDisabled || false}
+      icon={faBackward}
     >
       Previous
     </Button>
@@ -18,6 +21,8 @@ const CardsPaginator = ({ onPrevious, onNext, previousDisabled, nextDisabled, ..
       classes="btn-next"
       onClick={onNext}
       disabled={nextDisabled || false}
+      icon={faForward}
+      iconPosition="right"
     >
       Next
     </Button>

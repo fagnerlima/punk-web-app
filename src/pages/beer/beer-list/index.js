@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { faEye } from '@fortawesome/free-solid-svg-icons'
+
 import http from '../../../services/http';
 import Button from '../../../components/Button';
 import {
@@ -51,6 +53,7 @@ class BeerList extends Component {
       this.setState({
         isLoaded: true
       });
+      window.scroll(0, 0);
     }
   }
 
@@ -102,6 +105,7 @@ class BeerList extends Component {
                   color="primary"
                   size="sm"
                   to={`/beers/${beer.id}`}
+                  icon={faEye}
                 >
                   View Details
                 </Button>

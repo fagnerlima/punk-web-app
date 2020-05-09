@@ -7,6 +7,8 @@ body {
   padding: 0;
 }
 
+/* Container */
+
 .container {
   background-color: #fff;
   margin: 0 auto;
@@ -19,28 +21,9 @@ body {
   }
 }
 
-.table {
-  border-collapse: collapse;
-  width: 100%;
-}
+/* Button */
 
-.table th {
-  font-weight: 500;
-}
-
-.table th,
-.table td {
-  border: 1px solid rgba(0, 0, 0, .5);
-  padding: 10px;
-}
-
-.paginator {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
-}
-
-.paginator .btn {
+.btn {
   background-color: #33a;
   border-radius: 4px;
   border: none;
@@ -50,11 +33,51 @@ body {
   transition: .3s;
 }
 
-.paginator .btn:hover {
+.btn.btn-sm {
+  font-size: .8em;
+  padding: 5px 10px;
+}
+
+a.btn {
+  text-decoration: none;
+}
+
+.btn:hover {
   background-color: #22c;
 }
 
-.paginator .btn[disabled] {
+.btn[disabled] {
   background-color: rgba(120, 120, 120, .8);
   cursor: default;
+}
+
+/* Table */
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th {
+  font-weight: 600;
+}
+
+.table th,
+.table td {
+  border: 1px solid rgba(0, 0, 0, .5);
+  padding: 10px;
+}
+
+/* Paginator */
+
+.paginator {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+/* Lists */
+
+dl dt {
+  font-weight: 600;
 }

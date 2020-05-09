@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
-import http from '../../services/http';
+import http from '../../../services/http';
+import { Link } from 'react-router-dom';
 
-class Main extends Component {
+class BeerList extends Component {
 
   constructor(props) {
     super(props);
@@ -50,7 +51,10 @@ class Main extends Component {
     const { beers, pageIndex } = this.state;
 
     return (
-      <div className="container">
+      <>
+        <header>
+          <h1>Beers</h1>
+        </header>
         <table className="table">
           <thead>
             <tr>
@@ -65,7 +69,7 @@ class Main extends Component {
                 <td>{beer.id}</td>
                 <td>{beer.name}</td>
                 <td align="center">
-                  <a href="#">View</a>
+                  <Link className="btn btn-sm" to={`/beers/${beer.id}`}>View</Link>
                 </td>
               </tr>
             ))}
@@ -79,9 +83,9 @@ class Main extends Component {
             Next
           </button>
         </div>
-      </div>
+      </>
     );
   }
 }
 
-export default Main;
+export default BeerList;

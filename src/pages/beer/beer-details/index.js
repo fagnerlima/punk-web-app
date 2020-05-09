@@ -49,7 +49,7 @@ class BeerDetails extends Component {
             <p><b>Ingredients</b>:</p>
             <ul className="beer-ingredients">
               <li>
-                <b>Malt</b>
+                <b>Malt:</b>
                 <ul>
                   {beer.ingredients?.malt?.map(malt => (
                     <li>{malt.name} - {malt.amount.value} {malt.amount.unit}</li>
@@ -57,7 +57,7 @@ class BeerDetails extends Component {
                 </ul>
               </li>
               <li>
-                <b>Hoops</b>
+                <b>Hoops:</b>
                 <ul>
                   {beer.ingredients?.hops?.map(hop => (
                     <li>{hop.name} - {hop.amount.value} {hop.amount.unit}</li>

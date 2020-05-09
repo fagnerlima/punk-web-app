@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 
 import http from '../../../services/http';
 import Button from '../../../components/Button';
+import {
+  Card,
+  CardImage,
+  CardHeader,
+  CardContent,
+  CardFooter,
+  CardsList,
+  CardsPage,
+  CardsPaginator
+} from '../../../components/card';
 
 class BeerList extends Component {
 
@@ -55,7 +65,33 @@ class BeerList extends Component {
         <header className="text-center">
           <h1>Beers</h1>
         </header>
-        <div className="cards-list">
+        <CardsList>
+          <CardsPage>
+            {beers.map(beer => (
+              <Card key={beer.id}>
+                <CardImage url={beer.image_url} alt={beer.name} title={beer.name} />
+                <CardHeader>{beer.name}</CardHeader>
+                <CardContent>{beer.tagline}</CardContent>
+                <CardFooter>
+                  <Button
+                    type="link"
+                    color="primary"
+                    size="sm"
+                    to={`/beers/${beer.id}`}
+                  >
+                    View Details
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </CardsPage>
+          <CardsPaginator
+            onPrevious={this.previousPage}
+            onNext={this.nextPage}
+            previousDisabled={pageIndex === 1}
+          ></CardsPaginator>
+        </CardsList>
+        {/* <div className="cards-list">
           <div className="cards-page">
             {beers.map(beer => (
               <div key={beer.id} className="card">
@@ -99,7 +135,7 @@ class BeerList extends Component {
               Next
             </Button>
           </div>
-        </div>
+        </div> */}
       </>
     );
   }

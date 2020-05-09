@@ -10,7 +10,7 @@ class BeerList extends Component {
     this.state = {
       beers: [],
       pageIndex: 1,
-      pageSize: 10
+      pageSize: 12
     };
   }
 

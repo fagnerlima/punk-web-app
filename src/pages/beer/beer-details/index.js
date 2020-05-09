@@ -78,16 +78,16 @@ class BeerDetails extends Component {
             <li>
               <b>Malt:</b>
               <ul>
-                {beer.ingredients?.malt?.map(malt => (
-                  <li>{malt.name} - {malt.amount.value} {malt.amount.unit}</li>
+                {beer.ingredients?.malt?.map((malt, index) => (
+                  <li key={index}>{malt.name} - {malt.amount.value} {malt.amount.unit}</li>
                 ))}
               </ul>
             </li>
             <li>
               <b>Hoops:</b>
               <ul>
-                {beer.ingredients?.hops?.map(hop => (
-                  <li>{hop.name} - {hop.amount.value} {hop.amount.unit}</li>
+                {beer.ingredients?.hops?.map((hop, index) => (
+                  <li key={index}>{hop.name} - {hop.amount.value} {hop.amount.unit}</li>
                 ))}
               </ul>
             </li>

@@ -7,6 +7,9 @@ body {
   padding: 0;
 }
 
+/* Text */
+.text-center { text-align: center }
+
 /* Container */
 
 .container {
@@ -80,4 +83,67 @@ a.btn {
 
 dl dt {
   font-weight: 600;
+}
+
+/* .cards-list */
+
+.cards-list .cards-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cards-list .cards-page .card {
+  align-items: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5px;
+  padding: 20px 10px;
+  text-align: center;
+  transition: .3s;
+  width: 150px;
+}
+
+.cards-list .cards-page .card:hover {
+  transform: scale(1.025);
+}
+
+.cards-list .cards-page .card [class^="card-"] {
+  width: 100%;
+}
+
+.cards-list .cards-page .card .card-image img {
+  height: 100px;
+}
+
+.cards-list .cards-page .card .card-title,
+.cards-list .cards-page .card .card-content,
+.cards-list .cards-page .card .card-footer {
+  padding: 5px 0;
+}
+
+.cards-list .cards-page .card .card-title h3 {
+  font-size: 1em;
+  margin: 0;
+}
+
+.cards-list .cards-page .card .card-content {
+  font-size: .8em;
+}
+
+.cards-list .cards-page .card .card-content p {
+  margin: 0;
+}
+
+.cards-list .cards-page .card .card-footer {
+  margin-bottom: 0;
+}
+
+.cards-list .cards-paginator {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
 }

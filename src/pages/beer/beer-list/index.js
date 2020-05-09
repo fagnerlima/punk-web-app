@@ -52,22 +52,52 @@ class BeerList extends Component {
 
     return (
       <>
-        <header>
+        <header className="text-center">
           <h1>Beers</h1>
         </header>
-        <table className="table">
+        <div className="cards-list">
+          <div className="cards-page">
+            {beers.map(beer => (
+              <div key={beer.id} className="card">
+                <div className="card-image">
+                  <img src={beer.image_url} alt={beer.name} title={beer.name} />
+                </div>
+                <div className="card-title">
+                  <header class>
+                    <h3>{beer.name}</h3>
+                  </header>
+                </div>
+                <div className="card-content">
+                  <p>{beer.tagline}</p>
+                </div>
+                <div className="card-footer">
+                  <Link className="btn btn-sm" to={`/beers/${beer.id}`}>View Details</Link>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="cards-paginator">
+            <button className="btn btn-previous" onClick={this.previousPage} disabled={pageIndex === 1}>
+              Previous
+            </button>
+            <button className="btn btn-next" onClick={this.nextPage}>
+              Next
+            </button>
+          </div>
+        </div>
+        {/* <table className="table">
           <thead>
             <tr>
-              <th>#</th>
               <th>Name</th>
+              <th>Tagline</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {beers.map(beer => (
               <tr key={beer.id}>
-                <td>{beer.id}</td>
                 <td>{beer.name}</td>
+                <td>{beer.tagline}</td>
                 <td align="center">
                   <Link className="btn btn-sm" to={`/beers/${beer.id}`}>View</Link>
                 </td>
@@ -82,7 +112,7 @@ class BeerList extends Component {
           <button className="btn btn-next" onClick={this.nextPage}>
             Next
           </button>
-        </div>
+        </div> */}
       </>
     );
   }

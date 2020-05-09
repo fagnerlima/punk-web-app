@@ -33,7 +33,7 @@ class BeerDetail extends Component {
 
     return (
       <>
-        <header>
+        <header className="text-center">
           <h1>Beer Details</h1>
         </header>
         <dl>

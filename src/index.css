@@ -24,36 +24,6 @@ body {
   }
 }
 
-/* Button */
-
-.btn {
-  background-color: #33a;
-  border-radius: 4px;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  padding: 10px 15px;
-  transition: .3s;
-}
-
-.btn.btn-sm {
-  font-size: .8em;
-  padding: 5px 10px;
-}
-
-a.btn {
-  text-decoration: none;
-}
-
-.btn:hover {
-  background-color: #22c;
-}
-
-.btn[disabled] {
-  background-color: rgba(120, 120, 120, .8);
-  cursor: default;
-}
-
 /* Table */
 
 .table {

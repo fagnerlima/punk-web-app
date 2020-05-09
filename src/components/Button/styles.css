@@ -1,0 +1,30 @@
+.btn {
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: .3s;
+}
+
+a.btn {
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #33a;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #22c;
+}
+
+.btn-sm {
+  font-size: .8em;
+  padding: 5px 10px;
+}
+
+.btn[disabled] {
+  background-color: rgba(120, 120, 120, .8);
+  cursor: default;
+}

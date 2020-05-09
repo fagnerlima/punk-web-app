@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import http from '../../../services/http';
-import { Link } from 'react-router-dom';
+import Button from '../../../components/Button';
 
 class BeerList extends Component {
 
@@ -71,48 +71,35 @@ class BeerList extends Component {
                   <p>{beer.tagline}</p>
                 </div>
                 <div className="card-footer">
-                  <Link className="btn btn-sm" to={`/beers/${beer.id}`}>View Details</Link>
+                  <Button
+                    type="link"
+                    color="primary"
+                    size="sm"
+                    to={`/beers/${beer.id}`}
+                  >
+                    View Details
+                  </Button>
                 </div>
               </div>
             ))}
           </div>
           <div className="cards-paginator">
-            <button className="btn btn-previous" onClick={this.previousPage} disabled={pageIndex === 1}>
+            <Button
+              color="primary"
+              classes="btn-previous"
+              onClick={this.previousPage}
+              disabled={pageIndex === 1}
+            >
               Previous
-            </button>
-            <button className="btn btn-next" onClick={this.nextPage}>
+            </Button>
+            <Button
+                color="primary"
+                classes="btn-next"
+                onClick={this.nextPage}>
               Next
-            </button>
+            </Button>
           </div>
         </div>
-        {/* <table className="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Tagline</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {beers.map(beer => (
-              <tr key={beer.id}>
-                <td>{beer.name}</td>
-                <td>{beer.tagline}</td>
-                <td align="center">
-                  <Link className="btn btn-sm" to={`/beers/${beer.id}`}>View</Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <div className="paginator">
-          <button className="btn btn-previous" onClick={this.previousPage} disabled={pageIndex === 1}>
-            Previous
-          </button>
-          <button className="btn btn-next" onClick={this.nextPage}>
-            Next
-          </button>
-        </div> */}
       </>
     );
   }

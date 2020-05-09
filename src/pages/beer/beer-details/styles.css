@@ -1,0 +1,22 @@
+.beer-details {
+  display: flex;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.beer-details .beer-image {
+  padding-right: 40px;
+}
+
+.beer-details .beer-image img {
+  height: 300px;
+}
+
+.beer-details .beer-info .beer-name {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+.beer-details .beer-info .beer-ingredients {
+  padding-left: 10px;
+}

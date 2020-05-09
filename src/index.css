@@ -9,4 +9,18 @@ body {
   background-color: #dfdfdf;
   color: #333;
   font-family: Roboto, sans-serif;
+  font-size: 14px;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+li > ul {
+  padding-left: 10px;
 }

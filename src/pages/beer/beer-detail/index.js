@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import http from '../../../services/http';
 import HeaderPage from '../../../components/HeaderPage';
+import Button from '../../../components/Button';
 
 class BeerDetail extends Component {
 
@@ -35,19 +35,13 @@ class BeerDetail extends Component {
     return (
       <>
         <HeaderPage>Beer Details</HeaderPage>
-        <dl>
-          <dt>Name</dt>
-          <dd>{beer.name}</dd>
-          <dt>Tagline</dt>
-          <dd>{beer.tagline}</dd>
-          <dt>First Brewed</dt>
-          <dd>{beer.first_brewed}</dd>
-          <dt>Description</dt>
-          <dd>{beer.description}</dd>
-          <dt>Image</dt>
-          <dd><img src={beer.image_url} alt={beer.name} title={beer.name} height="100px" /></dd>
-        </dl>
-        <Link className="btn" to="/beers">Voltar</Link>
+        <Button
+          type="link"
+          color="primary"
+          to="/beers"
+        >
+          Voltar
+        </Button>
       </>
     );
   }

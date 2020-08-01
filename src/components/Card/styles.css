@@ -68,3 +68,5 @@
   margin: 5px;
   width: 100px;
 }
+
+.flex-spacer { flex-grow: 1 }

@@ -99,6 +99,7 @@ class BeerList extends Component {
               <CardImage url={beer.image_url} alt={beer.name} title={beer.name} />
               <CardHeader>{beer.name}</CardHeader>
               <CardContent>{beer.tagline}</CardContent>
+              <div className="flex-spacer"></div>
               <CardFooter>
                 <Button
                   type="link"
